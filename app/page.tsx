@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar } from "@/components/ui/avatar";
-import { formatUnits } from "ethers/lib/utils";
+import { formatUnits } from "ethers";
 import { ethers } from "ethers";
 
 export default function PulseBank() {
