@@ -5,8 +5,8 @@ import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Avatar } from "../components/ui/avatar";
-import { formatUnits } from "ethers";
-import { ethers } from "ethers";
+import { JsonRpcProvider, formatUnits } from "ethers";
+
 
 export default function PulseBank() {
   const [wallet, setWallet] = useState("0x");
@@ -19,7 +19,7 @@ export default function PulseBank() {
     const fetchBalance = async () => {
       if (!ethers.utils.isAddress(wallet)) return;
       try {
-        const provider = new ethers.providers.JsonRpcProvider("https://rpc.pulsechain.com");
+        const provider = new JsonRpcProvider("...");
         const balance = await provider.getBalance(wallet);
         const formatted = parseFloat(formatUnits(balance, 18)).toFixed(4);
         setPlsBalance(formatted);
